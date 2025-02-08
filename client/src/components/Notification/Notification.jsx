@@ -8,7 +8,7 @@ const Notification = () => {
   useEffect(() => {
     const fetchTodayEvents = async () => {
       try {
-        const { data } = await fetch("http://localhost:5000/api/events/today");
+        const { data } = await fetch("https://techfiesta.onrender.com/api/events/today");
         setEvents(data);
       } catch (error) {
         console.error("Error fetching today's events:", error);
