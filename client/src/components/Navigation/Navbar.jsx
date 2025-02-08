@@ -56,7 +56,7 @@ export function NavBar() {
 
   const fetchTodayEvents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/events/today", {
+      const response = await fetch("https://techfiesta.onrender.com/api/events/today", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
