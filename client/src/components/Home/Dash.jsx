@@ -14,14 +14,14 @@ function Dash() {
   let navigate = useNavigate();
   useEffect(() => {
     // Fetch user count
-    fetch("http://localhost:5000/api/users/user-count")
+    fetch("https://techfiesta.onrender.com/api/users/user-count")
       .then((response) => response.json())
       .then((data) => setUserCount(data.data))
       .catch((error) => console.error("Failed to fetch user count:", error));
 
     // Fetch quiz results
     if (userId) {
-      fetch(`http://localhost:5000/api/quiz/quiz-results/${userId}`
+      fetch(`https://techfiesta.onrender.com/api/quiz/quiz-results/${userId}`
         , {
           method: "GET",
           headers: {
