@@ -90,7 +90,7 @@ const PictoComponent = () => {
   const fetchRoadmap = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/quiz/pictoflow", {
+      const response = await fetch("https://techfiesta.onrender.com/api/quiz/pictoflow", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic }),
