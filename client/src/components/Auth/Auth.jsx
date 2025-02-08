@@ -28,7 +28,7 @@ const Auth = () => {
       // Request reset code
       try {
         const response = await fetch(
-          "http://localhost:5000/api/users/forgot-password",
+          "https://techfiesta.onrender.com/api/users/forgot-password",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ const Auth = () => {
       // Reset password with code
       try {
         const response = await fetch(
-          "http://localhost:5000/api/users/reset-password",
+          "https://techfiesta.onrender.com/api/users/reset-password",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -85,8 +85,8 @@ const Auth = () => {
     e.preventDefault();
     const endpoint =
       mode === "register"
-        ? "http://localhost:5000/api/users/register"
-        : "http://localhost:5000/api/users/login";
+        ? "https://techfiesta.onrender.com/api/users/register"
+        : "https://techfiesta.onrender.com/api/users/login";
 
     const payload =
       mode === "register"
