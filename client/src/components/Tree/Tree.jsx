@@ -38,7 +38,7 @@ import {
 } from "@mui/icons-material";
 
 // API Configuration
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://techfiesta.onrender.com/api";
 
 const fetchWithAuth = async (endpoint, options = {}) => {
   const token = localStorage.getItem("token");
