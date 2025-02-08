@@ -17,7 +17,7 @@ const Report = () => {
 
   useEffect(() => {
     if (userId) {
-      fetch(`http://localhost:5000/api/quiz/user-quiz/${userId}`,{
+      fetch(`https://techfiesta.onrender.com/api/quiz/user-quiz/${userId}`,{
         method: "GET",
         headers: {
           "Content-Type": "application/json",
