@@ -31,7 +31,7 @@ const Quiz = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/quiz/generate", {
+      const response = await fetch("https://techfiesta.onrender.com/api/quiz/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,7 +89,7 @@ const Quiz = () => {
         );
       }
 
-      const response = await fetch("http://localhost:5000/api/quiz/submit", {
+      const response = await fetch("https://techfiesta.onrender.com/api/quiz/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
