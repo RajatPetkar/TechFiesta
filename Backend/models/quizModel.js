@@ -7,7 +7,7 @@ const Question = require("./questionSchema");
 
 dotenv.config();
 const genAi = new GoogleGenerativeAI(process.env.LLM_API_KEY);
-const model = genAi.getGenerativeModel({ model: "gemini-pro" });
+const model = genAi.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const quizSchema = new Schema({
   title: {
@@ -90,11 +90,11 @@ quizSchema.statics.generateQuiz = async function (
   const result = await model.generateContent(prompt);
   console.log(result);
 
-  const response = result.response;
-  let text = await response.text();
-  text = text.replace("```json\n", "");
-  text = text.replace("```", "");
-  text = text.replace("```JSON", "");
+    const response = result.response;
+    let text = response.text();
+    text = text.replace("```json\n", "");
+    text = text.replace("```", "");
+    text = text.replace("```JSON", "");
 
   const questions = JSON.parse(text);
   console.log(questions);

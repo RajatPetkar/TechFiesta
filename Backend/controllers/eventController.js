@@ -17,11 +17,10 @@ const eventController = {
         today.setHours(0, 0, 0, 0);
 
         const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 1);  
+        tomorrow.setDate(today.getDate() + 1);
         
         const events = await eventsModel.find({
             start: { $gte: today, $lt: tomorrow },
-            userId: id
         });
 
         res.json(events);

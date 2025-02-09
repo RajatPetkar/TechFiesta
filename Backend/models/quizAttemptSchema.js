@@ -72,6 +72,10 @@ quizAttemptSchema.statics.createAttempt = async function (quizId, userId, answer
 
     await attempt.save();
 
+
+    let avg_quiz_score = user.avg_score ? (user.avg_score * user.quizzes.length + score) / (user.quizzes.length + 1) : 0;
+    User.updateOne({ _id: userId }, { $set: { avg_score: avg_quiz_score } });
+
     user.quizzes.push(quizId);
     await user.save();
 

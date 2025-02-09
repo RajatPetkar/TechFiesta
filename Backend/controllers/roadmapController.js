@@ -17,8 +17,17 @@ const roadmapController = {
     createRoadmap: async (req, res) => {
         try {
             const topic = req.body.topic;
-            const roadmap = await generateRoadmap(topic);
-        
+            const user = await userModel.findById(req.userId);
+            if(!user){
+                res.status(404).json({ message: "User not found" });
+            }
+
+            console.log(user, user.toObject().clusterId);      
+            const _res = await fetch(`http://localhost:8000/cluster/summary?id=${user.toObject().clusterId}`);
+            const data = await _res.json();
+
+            console.log(data);
+            const roadmap = await generateRoadmap(topic, data.summary);
             
             const checkpoints = await Promise.all(roadmap.checkpoints.map(async (checkpoint, index) => {
                 checkpoint.order = index + 1;

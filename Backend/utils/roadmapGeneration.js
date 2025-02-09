@@ -67,7 +67,7 @@ Ensure JSON validity and output less than 5000 tokens.
 // ✅ Step 4: Execute Secure Prompt Chain
 const genAI = new GoogleGenerativeAI(process.env.LLM_API_KEY);
 
-const generateRoadmap = async (topic) => {
+const generateRoadmap = async (topic, summary) => {
   try {
     // 🚀 Step 1: Validate & Secure Input
     const sanitizedTopic = sanitizeInput(topic);
@@ -84,10 +84,13 @@ const generateRoadmap = async (topic) => {
     }
 
     // 🚀 Step 3: Generate Roadmap (Second Prompt)
-    const finalPrompt = ROADMAP_PROMPT_TEMPLATE.replace(
+    let finalPrompt = ROADMAP_PROMPT_TEMPLATE.replace(
       "{SANITIZED_TOPIC}",
       validatedTopic
     );
+
+    finalPrompt += summary;
+    console.log(finalPrompt);
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(finalPrompt);
     const response = result.response;
