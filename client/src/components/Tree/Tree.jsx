@@ -2,7 +2,7 @@
 // npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 
 import React, { useState, useEffect } from "react";
-import Bot from "../ChatBot/Bot";
+import Bot from "../Chatobot/Bot";
 import {
   Box,
   Button,

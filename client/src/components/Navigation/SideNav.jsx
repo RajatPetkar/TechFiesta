@@ -24,11 +24,11 @@ const mainNavItems = [
   { icon: CreditCard, label: "Project Idea", href: "/path" },
   { icon: PieChart, label: "Reports", href: "/reports" },
   { icon: Lightbulb, label: "Test", href: "/test" },
-  { icon: Mail, label: "PictoFlow", href: "/pictoflow" },
-  { icon: Mail, label: "WorkFlow", href: "/workflow" },
 ];
 
 const resourcesNavItems = [
+  { icon: FileText, label: "Documents", href: "/documents" },
+  { icon: Mail, label: "Messages", href: "/message" },
   { icon: Calendar, label: "Calendar", href: "/calendar" },
 ];
 

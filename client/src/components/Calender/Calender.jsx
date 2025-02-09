@@ -18,7 +18,7 @@ const MyCalendar = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch("https://techfiesta.onrender.com/api/events",{
+      const response = await fetch("http://localhost:5000/api/events",{
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -55,7 +55,7 @@ const MyCalendar = () => {
     if (!newEvent.title.trim()) return;
     try {
       if(selectedEvent){
-        const response = await fetch(`https://techfiesta.onrender.com/api/events/${selectedEvent._id}`, {
+        const response = await fetch(`http://localhost:5000/api/events/${selectedEvent._id}`, {
           method: "PUT",
           headers: {
             'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const MyCalendar = () => {
         const data = await response.json();
 
       } else {
-        const response = await fetch("https://techfiesta.onrender.com/api/events", {
+        const response = await fetch("http://localhost:5000/api/events", {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const MyCalendar = () => {
   const handleDeleteEvent = async () => {
     if (!selectedEvent) return;
     try {
-      await fetch(`https://techfiesta.onrender.com/api/events/${selectedEvent._id}`, {
+      await fetch(`http://localhost:5000/api/events/${selectedEvent._id}`, {
         method: "DELETE",
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

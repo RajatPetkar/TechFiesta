@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import FeaturesSection from "./features";
 import PricingSection from "./PricingSection";
 import FooterSection from "./FooterSection";
+import langdingPageImage from './logo2.jpg';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -21,11 +22,16 @@ const LandingPage = () => {
                 AI-powered, personalized learning paths designed just for YOU!
               </p>
               <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mt-4">
-                <Button onClick={() => navigate('/auth')} variant="primary" size="lg" className="px-4 py-2">
+                <Button
+                  onClick={() => navigate("/auth")}
+                  variant="primary"
+                  size="lg"
+                  className="px-4 py-2"
+                >
                   Login
                 </Button>
                 <Button
-                  onClick={() => navigate('/help')}
+                  onClick={() => navigate("/help")}
                   variant="outline-primary"
                   size="lg"
                   className="px-4 py-2"
@@ -35,9 +41,8 @@ const LandingPage = () => {
               </div>
             </Col>
             <Col lg={6} className="text-center">
-              {/* Image Now Works & Stays Responsive */}
               <img
-                src="logo2.jpeg"
+                src={langdingPageImage}
                 alt="Learning AI"
                 className="img-fluid rounded shadow-lg"
                 style={{ maxWidth: "75%", height: "auto" }}
@@ -46,9 +51,9 @@ const LandingPage = () => {
           </Row>
         </Container>
       </section>
-      <FeaturesSection/>
-      <PricingSection/>
-      <FooterSection/>
+      <FeaturesSection />
+      <PricingSection />
+      <FooterSection />
     </div>
   );
 };

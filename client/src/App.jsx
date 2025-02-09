@@ -14,8 +14,7 @@ import Report from "./components/Report/Report";
 import Tree from "./components/Tree/Tree";
 import Profile from "./components/Profile/Profile";
 import LandingPage from "./components/Landing/LandingPage";
-import PictoFlow from "./components/Pictoflow/PictoComponent ";
-import WorkflowComponent from "./components/Workflow/WorkflowComponent";
+import Survey from './components/Survey/Survey';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -48,8 +47,7 @@ function App() {
           <Route path="/reports" element={<Report />} />
           <Route path="/test" element={<Quiz />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/pictoflow" element={<PictoFlow />} />
-          <Route path="/workflow" element={<WorkflowComponent/>} />
+          <Route path="/survey" element={<Survey />} />
         </Route>
       </Routes>
     </Router>

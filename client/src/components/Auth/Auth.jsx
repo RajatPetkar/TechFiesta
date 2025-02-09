@@ -28,7 +28,7 @@ const Auth = () => {
       // Request reset code
       try {
         const response = await fetch(
-          "https://techfiesta.onrender.com/api/users/forgot-password",
+          "http://localhost:5000/api/users/forgot-password",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ const Auth = () => {
       // Reset password with code
       try {
         const response = await fetch(
-          "https://techfiesta.onrender.com/api/users/reset-password",
+          "http://localhost:5000/api/users/reset-password",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -85,8 +85,8 @@ const Auth = () => {
     e.preventDefault();
     const endpoint =
       mode === "register"
-        ? "https://techfiesta.onrender.com/api/users/register"
-        : "https://techfiesta.onrender.com/api/users/login";
+        ? "http://localhost:5000/api/users/register"
+        : "http://localhost:5000/api/users/login";
 
     const payload =
       mode === "register"
@@ -115,7 +115,13 @@ const Auth = () => {
           localStorage.setItem("name", data.data.name);
           localStorage.setItem('email', data.data.email);
           localStorage.setItem("userId", data.data._id);
-          navigate('/quiz');
+          localStorage.setItem("user", JSON.stringify(data.data));
+
+          if(data.data.isAssessmentComplete) {
+            navigate('/quiz');
+          }else {
+            navigate('/survey');
+          }
         } else {
           setMode("login");
           alert("Registration successful! Please login.");

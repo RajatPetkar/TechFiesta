@@ -56,12 +56,6 @@ export default function Path() {
           >
             Get Project Idea
           </button>
-          <button
-            onClick={()=>navigate("/workflow")}
-            className="btn btn-dark px-4 py-2 fw-bold me-2"
-          >
-            Add to Workflow
-          </button>
         </div>
       </div>
     </main>
